@@ -1,10 +1,10 @@
 {
-  "name": "monokai",
+  "name": "monokai 2",
   "theme": "syntax",
-  "version": "0.24.0",
+  "version": "2.2.0",
   "private": true,
   "description": "A monokai theme",
-  "repository": "https://github.com/kevinsawicki/monokai",
+  "repository": "https://github.com/thegifter/monokai",
   "license": "MIT",
   "engines": {
     "atom": ">=1.13.0"
