@@ -6,4 +6,4 @@ I found that the monokai theme by Kevin was one of the only syntax style's I cou
 
 Originally from kevinsawicki/monokai @ https://github.com/kevinsawicki/monokai
 
-![](https://github.com/thegifter/monokai/blob/master/Monokai-2-demo.JPG)
+![](https://raw.githubusercontent.com/thegifter/monokai-2/master/Monokai-2-demo.JPG)
