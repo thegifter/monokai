@@ -1,4 +1,4 @@
-# Monokai theme
+# Monokai 2 theme
 
 A monokai syntax theme for Atom - WITH ADDED COLORS. Great for PHP
 
