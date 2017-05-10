@@ -220,3 +220,64 @@ atom-text-editor {
     }
   }
 }
+
+/* MY CODE */
+// MAKES FUNC CALLS -BLUE
+.syntax--function-call {
+  color: @co-function;
+}
+// MAKE PARAMETERS FOR PHP FUNCS ORANGE
+.syntax--function {
+  &.syntax--arguments {
+    .syntax--variable{
+      color: @orange;
+    }
+  }
+}
+// MAKE VARIABLES IN QUOTES NOTICABLE
+.syntax--sql{
+  .syntax--variable {
+    color: @co-sql-var;
+  }
+}
+// MAKE SINGLE QUOTE TEXT JUST A BIT DIFFERENT
+.syntax--string{
+  &.syntax--quoted{
+    &.syntax--single {
+      color: @co-single-quotes;
+    }
+  }
+}
+// MAKE SQL_CODE -BLUE AND NOT ECHO
+.syntax--support {
+  &.syntax--function {
+    &:not(.syntax--output):not(.syntax--construct) {
+      color: @co-function;
+    }
+  }
+}
+// MAKES <?PHP STAND OUT
+.syntax--punctuation{
+	&.syntax--section{
+	&.syntax--embedded{
+	&.syntax--php{
+	&.syntax--begin,
+    	&.syntax--end{
+			color: @co-php;
+		}
+	}}}
+}
+// MAKES PAREN -GREEN WITH FUNCTIONS AND SUCH.
+.syntax--punctuation {
+	&.syntax--definition {
+	&.syntax--parameters {
+	&.syntax--begin,
+		&.syntax--end {
+			color: @green;
+			}
+		}}
+}
+// MAKES EVERYTHING BUT VARIABLES GREEN IF A ARGUEMENT OF FUNCTION
+.syntax--function.syntax--arguments.syntax--php {
+	color: @green;
+}
