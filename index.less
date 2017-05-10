@@ -220,64 +220,149 @@ atom-text-editor {
     }
   }
 }
+//## -- ALL CODES -- ## \\
 
-/* MY CODE */
-// MAKES FUNC CALLS -BLUE
-.syntax--function-call {
-  color: @co-function;
-}
-// MAKE PARAMETERS FOR PHP FUNCS ORANGE
-.syntax--function {
-  &.syntax--arguments {
-    .syntax--variable{
-      color: @orange;
-    }
-  }
-}
-// MAKE VARIABLES IN QUOTES NOTICABLE
-.syntax--sql{
-  .syntax--variable {
-    color: @co-sql-var;
-  }
-}
 // MAKE SINGLE QUOTE TEXT JUST A BIT DIFFERENT
 .syntax--string{
   &.syntax--quoted{
-    &.syntax--single {
-      color: @co-single-quotes;
-    }
+	&.syntax--single { // change single to double to switch colors
+	  color: @co-single-quotes;
+	}
   }
 }
-// MAKE SQL_CODE -BLUE AND NOT ECHO
-.syntax--support {
-  &.syntax--function {
-    &:not(.syntax--output):not(.syntax--construct) {
-      color: @co-function;
-    }
-  }
+// MAKE CSS ID AND CLASS COLORS AND PSUEDO
+.syntax--entity.syntax--other {
+	&.syntax--class {
+		color: @green;
+	}
+	&.syntax--id {
+		color: @yellow;
+	}
+	&.syntax--pseudo-class{
+		color: @orange;
+	}
+	&.syntax--pseudo-element{
+		color: #ff5858;
+	}
 }
-// MAKES <?PHP STAND OUT
-.syntax--punctuation{
-	&.syntax--section{
-	&.syntax--embedded{
-	&.syntax--php{
-	&.syntax--begin,
-    	&.syntax--end{
-			color: @co-php;
-		}
-	}}}
-}
-// MAKES PAREN -GREEN WITH FUNCTIONS AND SUCH.
-.syntax--punctuation {
-	&.syntax--definition {
-	&.syntax--parameters {
-	&.syntax--begin,
-		&.syntax--end {
-			color: @green;
+//## -- PHP CUSTOM SECTION -- ## \\
+
+// MAKES FUNC CALLS -BLUE
+.syntax--php {
+	&.syntax--function-call {
+	  color: @co-function;
+	}
+	// MAKE PARAMETERS FOR PHP FUNCS -ORANGE
+	&.syntax--function {
+	  &.syntax--arguments {
+	    .syntax--variable{
+	      color: @orange;
+	    }
+	  }
+	}
+	// MAKE VARIABLES IN QUOTES NOTICABLE
+	&.syntax--sql{
+	  .syntax--variable {
+	    color: @co-sql-var;
+	  }
+	}
+	// MAKE SQL_CODE -BLUE AND NOT ECHO
+	&.syntax--support {
+	  &.syntax--function {
+	    &:not(.syntax--output):not(.syntax--construct) {
+	      color: @co-function;
+	    }
+	  }
+	}
+	// MAKES <?PHP STAND OUT
+	&.syntax--punctuation{
+		&.syntax--section{
+		&.syntax--embedded{
+		&.syntax--php{
+		&.syntax--begin,
+	    	&.syntax--end{
+				color: @co-php;
 			}
-		}}
+		}}}
+	}
+	// MAKES PAREN -GREEN WITH FUNCTIONS AND SUCH.
+	&.syntax--punctuation {
+		&.syntax--definition {
+		&.syntax--parameters {
+		&.syntax--begin,
+			&.syntax--end {
+				color: @green;
+				}
+			}}
+	}
+	// MAKES EVERYTHING BUT VARIABLES -GREEN IF A ARGUEMENT OF FUNCTION
+	&.syntax--function.syntax--arguments.syntax--php {
+		color: @green;
+	}
+	// MAKE VARIABLE WHITE
+	.syntax--variable {
+		color: @light-ghost-white;
+	}
 }
-// MAKES EVERYTHING BUT VARIABLES GREEN IF A ARGUEMENT OF FUNCTION
-.syntax--function.syntax--arguments.syntax--php {
-	color: @green;
+
+//## -- JS CUSTOM SECTION -- ## \\
+
+.syntax--js {
+	//ADDS FUNCTION COLOR TORQOISE
+	&.syntax--function-call{
+		> .syntax--function {
+			color: @co-function;
+		}
+		> .syntax--arguments {
+			> .syntax--bracket.syntax--round,
+				> .syntax--comma {
+					color: @co-function
+		}}
+	}
+	//ADDS METHOD COLORS TO REGULAR --BLUE
+	&.syntax--method-call{
+		> .syntax--function,
+		> .syntax--delimiter.syntax--method.syntax--period {
+			color: @blue;
+		}
+		> .syntax--arguments {
+			> .syntax--bracket.syntax--round,
+				> .syntax--comma {
+					color: @blue;
+		}}
+	}
+	// ADDS PARAMETERS COLORS FOR FUNCTIONS TO --ORANGE
+	&.syntax--function {
+		.syntax--parameter{
+			color: @orange;
+		}
+	}
+	// MAKES OBJECT PROPERTY NAMES -PINK/PURLE
+	&.syntax--property.syntax--variable {
+		color: @co-ob-prop;
+	}
+	// MAKES OBJECT FIELD NAMES LIGHT -PURPLE
+	&.syntax--property.syntax--variable.syntax--object {
+		color: @co-ob-prop-field;
+	}
+	//MAKES OBJECT NAME DARK -PURPLE ISH.
+	&.syntax--object.syntax--variable {
+		color: @co-ob-name;
+	}
+}
+//## JADE PUG CUSTOM ##\\
+
+// Need to install pug -- may not work right. Will be releasing our own sytax for pug soon.
+.syntax--pug, .syntax--jade{
+	.syntax--tag {
+	&.syntax--attribute {
+	&.syntax--class {
+		color: @orange;
+	}}}
+	.syntax--tag {
+	&.syntax--attribute {
+	&.syntax--id {
+		color: @yellow;
+	}}}
+
 }
