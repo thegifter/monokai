@@ -1,7 +1,7 @@
 {
   "name": "monokai-2",
   "theme": "syntax",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "author": "The Gifter <thegr8gifter@gmail.com>",
   "keywords": [
     "monokai",
@@ -13,9 +13,9 @@
     "easy",
     "readable",
     "highlight",
-	"best higlight",
-	"best syntax",
-	"theme"
+    "best higlight",
+    "best syntax",
+    "theme"
   ],
   "description": "A updated monokai v2 theme - very easy to read - beautify code",
   "repository": "https://github.com/thegifter/monokai-2",
