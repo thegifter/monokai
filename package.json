@@ -12,9 +12,12 @@
     "javascrypt",
     "easy",
     "readable",
-    "highlight"
+    "highlight",
+	"best higlight",
+	"best syntax",
+	"theme"
   ],
-  "description": "A updated monokai 2 theme - very easy to read - beautify code",
+  "description": "A updated monokai v2 theme - very easy to read - beautify code",
   "repository": "https://github.com/thegifter/monokai-2",
   "license": "MIT",
   "engines": {
